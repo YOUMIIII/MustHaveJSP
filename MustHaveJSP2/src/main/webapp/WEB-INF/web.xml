@@ -58,4 +58,58 @@
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
    
+  
+  <context-param>
+  	<param-name>POSTS_PER_PAGE</param-name>
+  	<param-value>10</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>PAGES_PER_BLOCK</param-name>
+  	<param-value>5</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>DirectServletPrint</servlet-name>
+  	<servlet-class>servlet.DirectServletPrint</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DirectServletPrint</servlet-name>
+  	<url-pattern>/13Servlet/DirectServletPrint.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>MemberAuth</servlet-name>
+  	<servlet-class>servlet.MemberAuth</servlet-class>
+  	<init-param>
+  		<param-name>admin_id</param-name>
+  		<param-value>nakja</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MemberAuth</servlet-name>
+  	<url-pattern>/13Servlet/MemberAuth.mvc</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>MVCBoardList</servlet-name>
+  	<servlet-class>model2.mvcboard.ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MVCBoardList</servlet-name>
+  	<url-pattern>/mvcboard/list.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>MVCBoardWrite</servlet-name>
+  	<servlet-class>model2.mvcboard.WriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MVCBoardWrite</servlet-name>
+  	<url-pattern>/mvcboard/write.do</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  	<param-name>maxPostSize</param-name>
+  	<param-value>1024000</param-value>
+  </context-param>
 </web-app>
